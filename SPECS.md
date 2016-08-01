@@ -11,7 +11,7 @@ Creating a user interface will provide practice in connecting the front- and bac
 
 - [ ] Games are played on a web-based game board.
 
-- [ ] Player can select betwixt different game modes.
+- [ ] Player can select betwixt different game modes:
 
   - [ ] One human player can play a game of classic tic-tac-toe against a computer AI.
 

@@ -11,16 +11,14 @@ Creating a user interface will provide practice in connecting the front- and bac
 
 - [ ] Games are played on a web-based game board.
 
-- [ ] Player can select betwixt different game modes:
-
-  - [ ] One human player can play a game of classic tic-tac-toe against a computer AI.
-
-  - [ ] Two human players can play a game of super tic-tac-toe against each other on the same webpage.
-
-  - [ ] One human player can play a game of super tic-tac-toe against a computer AI opponent. 
+- [ ] Player can select betwixt four different game modes: 
+  - Classic tic-tac-toe: Player vs. player or player vs. AI
+  - Super tic-tac-toe: Player vs. player or player vs. AI
 
 - [ ] Player cannot make illegal moves.
 
 - [ ] Player can start a new game.
 
 - [ ] Player can view game rules on our website.
+
+- [ ] Stack includes: HTML, CSS, Javascript, Jasmine testing

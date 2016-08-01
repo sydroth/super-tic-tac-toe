@@ -13,11 +13,11 @@ Creating a user interface will provide practice in connecting the front- and bac
 
 - [ ] Player can select betwixt different game modes.
 
-- [ ] One human player can play a game of classic tic-tac-toe against a computer AI.
+  - [ ] One human player can play a game of classic tic-tac-toe against a computer AI.
 
-- [ ] Two human players can play a game of super tic-tac-toe against each other on the same webpage.
+  - [ ] Two human players can play a game of super tic-tac-toe against each other on the same webpage.
 
-- [ ] One human player can play a game of super tic-tac-toe against a computer AI opponent. 
+  - [ ] One human player can play a game of super tic-tac-toe against a computer AI opponent. 
 
 - [ ] Player cannot make illegal moves.
 

@@ -5,3 +5,7 @@ body {
 .yellow {
   background-color: yellow;
 }
+
+#container {
+  background-color: red;
+}

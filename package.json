@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/sydroth/super-tic-tac-toe#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta4"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

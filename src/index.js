@@ -14,17 +14,18 @@ app.listen(3000, function () {
 });
 
 app.get('/api/games/new', function(req, res){
-  // console.log('Attempting to create new game...')
-  // let newBoard = new Board()
-  // newBoard.place('X', 0, 0)
-  // console.log(newBoard)
-  // res.send(newBoard.boardTable())
+  console.log('Attempting to create new game...')
+  res.render('index', {
+    title: 'Tic Tac Toe (Simple)',
+    message: 'Hello there!',
+    board: ['.', '.', '.', '.', '.', '.', '.', '.', '.']
+  });
 })
 
 app.get('/', function (req, res) {
   res.render('index', {
     title: 'Tic Tac Toe (Simple)',
     message: 'Hello there!',
-    board: ['X', ' ', ' ', 'O', 'X', 'O', ' ', ' ', ' ']
+    board: ['X', '.', '.', 'O', 'X', 'O', '.', '.', '.']
   });
 });

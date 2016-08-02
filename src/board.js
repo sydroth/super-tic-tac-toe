@@ -33,21 +33,6 @@ export class Board {
     return output
   }
 
-  boardTable() {
-    let output =
-    <table>
-    <tr>
-    <td>John</td>
-    <td>Doe</td>
-    </tr>
-    <tr>
-    <td>Jane</td>
-    <td>Doe</td>
-    </tr>
-    </table>
-    return output
-  }
-
   place(letter, x, y) {
     this.board[y][x] = letter
   }

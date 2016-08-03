@@ -1,28 +1,22 @@
 'use strict'
 
 let globalBoard = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+let blankArray = ['.', '.', '.','.', '.', '.', '.', '.', '.']
 
 
 $( document ).ready(() => {
-  console.log('Hola')
-  createNewBoard()
-  updateBoard(globalBoard)
+  let b = new Board()
+  // createNewBoard()
+  updateBoard(b)
   attachListeners()
 })
 
-const createNewBoard = () => {
-  // $.get('/api/games/new', function(data) {
-  //     // console.log('ajax data', data)
-  //     // $('#board').html(data)
-  //   })
-  let b = new Board()
-}
-
-const updateBoard = (boardArray) => {
+const updateBoard = (board) => {
   let idsArray = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => '#cell-' + k)
   idsArray.forEach(k => {
-    $(k).html(boardArray[k.charAt(k.length - 1)])
+    $(k).html(board.board[k.charAt(k.length - 1)])
   })
+  console.log(board.xsTurn);
 }
 
 const attachListeners = () => {

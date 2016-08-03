@@ -29,6 +29,7 @@ const attachListeners = (boardArg) => {
     // console.log(cell)
     boardArg.board[cell] = boardArg.nextToMove()
     console.log(boardArg.board)
+    boardArg.checkforWin()
     boardArg.xsTurn = !boardArg.xsTurn
     return boardArg
   })
@@ -77,9 +78,9 @@ class Board {
   }
 
   checkforWin() {
-    checkHoriz();
-    checkVertical();
-    checkDiag();
+    this.checkHoriz();
+    this.checkVertical();
+    this.checkDiag();
   }
 
   checkHoriz(){
@@ -87,7 +88,7 @@ class Board {
     var numRows = 3
     for(var i = 0; i < numRows; i++){
       var rowLeft = i * 3
-      if(board[rowLeft] === board[rowLeft + 1] && board[rowLeft] === board[rowLeft + 2] && board [rowLeft] != " "){
+      if(board[rowLeft] === board[rowLeft + 1] && board[rowLeft] === board[rowLeft + 2] && board [rowLeft] != "."){
         console.log(board[rowLeft], " WINS!!!")
       }  
     }
@@ -98,7 +99,7 @@ class Board {
     var numColumns = 3
     for(var i = 0; i < numColumns; i++){
       var columnTop = i
-      if(board[columnTop] === board[columnTop + 3] && board[columnTop] === board[columnTop + 6] && board [columnTop] != " "){
+      if(board[columnTop] === board[columnTop + 3] && board[columnTop] === board[columnTop + 6] && board [columnTop] != "."){
         console.log(board[columnTop], " WINS!!!")
       }  
     }
@@ -106,10 +107,10 @@ class Board {
 
   checkDiag(){
     var board = this.board;
-    if(board[0] === board[0 + 4] && board[0] === board[0 + 8] && board[0] != " "){
+    if(board[0] === board[0 + 4] && board[0] === board[0 + 8] && board[0] != "."){
       console.log(board[0], " WINS!!!")
     }
-    if(board[2] === board[2 + 2] && board[2] === board[2 + 4] && board [2] != " "){
+    if(board[2] === board[2 + 2] && board[2] === board[2 + 4] && board [2] != "."){
       console.log(board[2], " WINS!!!")
     }  
   }

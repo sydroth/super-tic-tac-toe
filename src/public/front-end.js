@@ -8,21 +8,21 @@ $( document ).ready(() => {
   let b = new Board()
   // createNewBoard()
   updateBoard(b)
-  attachListeners()
+  attachListeners(b)
 })
 
-const updateBoard = (board) => {
+const updateBoard = (boardArg) => {
   let idsArray = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => '#cell-' + k)
   idsArray.forEach(k => {
-    $(k).html(board.board[k.charAt(k.length - 1)])
+    $(k).html(boardArg.board[k.charAt(k.length - 1)])
   })
-  console.log(board.xsTurn);
 }
 
-const attachListeners = () => {
+const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
-    console.log($(this).html('X'))
+    console.log($(this).html(boardArg.nextToMove()))
+    // console.log("BoardArg:", boardArg.nextToMove());
     console.log("You clicked on", this)
   })
 }
@@ -30,12 +30,17 @@ const attachListeners = () => {
 
 class Board {
   constructor() {
-    this.board = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
-    this.xsTurn = true
+    this.board = blankArray
+    this.xsTurn = false
   }
 
   nextToMove() {
-    this.xsTurn ? 'X' : 'O'
+    if (this.xsTurn) {
+      return 'X'
+    }
+    else {
+      return 'O'
+    }
   }
 
   isEmpty() {

@@ -22,24 +22,25 @@ const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
     $(this).html(boardArg.nextToMove())
-    // console.log(this.id)
-    // console.log("BoardArg:", boardArg.nextToMove());
-    // console.log("You clicked on", this)
+    $(this).unbind()
     let cell = this.id.replace('cell-', '')
-    // console.log(cell)
     boardArg.board[cell] = boardArg.nextToMove()
     console.log(boardArg.board)
-    boardArg.checkforWin()
+    boardArg.gameFinished = boardArg.checkforWin()
     boardArg.xsTurn = !boardArg.xsTurn
     return boardArg
   })
 }
+
+//if gameFinished = true 
+  //then unbind clickable events from whole board
 
 
 class Board {
   constructor() {
     this.board = blankArray
     this.xsTurn = true
+    this.gameFinished = false
   }
 
   nextToMove() {
@@ -78,9 +79,9 @@ class Board {
   }
 
   checkforWin() {
-    this.checkHoriz();
-    this.checkVertical();
-    this.checkDiag();
+    if (this.checkHoriz() || this.checkVertical() || this.checkDiag())
+      {return true}
+    else {return false}
   }
 
   checkHoriz(){
@@ -90,6 +91,7 @@ class Board {
       var rowLeft = i * 3
       if(board[rowLeft] === board[rowLeft + 1] && board[rowLeft] === board[rowLeft + 2] && board [rowLeft] != "."){
         console.log(board[rowLeft], " WINS!!!")
+        return true
       }  
     }
   }
@@ -101,6 +103,7 @@ class Board {
       var columnTop = i
       if(board[columnTop] === board[columnTop + 3] && board[columnTop] === board[columnTop + 6] && board [columnTop] != "."){
         console.log(board[columnTop], " WINS!!!")
+        return true
       }  
     }
   }
@@ -109,9 +112,11 @@ class Board {
     var board = this.board;
     if(board[0] === board[0 + 4] && board[0] === board[0 + 8] && board[0] != "."){
       console.log(board[0], " WINS!!!")
+      return true
     }
     if(board[2] === board[2 + 2] && board[2] === board[2 + 4] && board [2] != "."){
       console.log(board[2], " WINS!!!")
+      return true
     }  
   }
 

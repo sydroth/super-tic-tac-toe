@@ -18,19 +18,19 @@ const updateBoard = (boardArg) => {
   })
 }
 
+const displayTurn = (boardArg) => {
+  $('#turn').html(boardArg.nextToMove()+"'s turn")
+}
+
 const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
     $(this).html(boardArg.nextToMove())
-    // console.log(this.id)
-    // console.log("BoardArg:", boardArg.nextToMove());
-    // console.log("You clicked on", this)
     let cell = this.id.replace('cell-', '')
-    // console.log(cell)
     boardArg.board[cell] = boardArg.nextToMove()
-    console.log(boardArg.board)
     boardArg.checkforWin()
     boardArg.xsTurn = !boardArg.xsTurn
+    displayTurn(boardArg)
     return boardArg
   })
 }
@@ -90,7 +90,7 @@ class Board {
       var rowLeft = i * 3
       if(board[rowLeft] === board[rowLeft + 1] && board[rowLeft] === board[rowLeft + 2] && board [rowLeft] != "."){
         console.log(board[rowLeft], " WINS!!!")
-      }  
+      }
     }
   }
 
@@ -101,7 +101,7 @@ class Board {
       var columnTop = i
       if(board[columnTop] === board[columnTop + 3] && board[columnTop] === board[columnTop + 6] && board [columnTop] != "."){
         console.log(board[columnTop], " WINS!!!")
-      }  
+      }
     }
   }
 
@@ -112,7 +112,7 @@ class Board {
     }
     if(board[2] === board[2 + 2] && board[2] === board[2 + 4] && board [2] != "."){
       console.log(board[2], " WINS!!!")
-    }  
+    }
   }
 
 }

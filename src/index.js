@@ -3,7 +3,7 @@ var app = express();
 let pug = require('pug')
 let path = require('path')
 
-import { Board } from './board'
+// import { Board } from './board'
 
 let globalBoard = ['.', '.', '.','.', '.', '.', '.', '.', '.']
 

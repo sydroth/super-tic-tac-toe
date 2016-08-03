@@ -24,6 +24,8 @@ const attachListeners = (boardArg) => {
     console.log($(this).html(boardArg.nextToMove()))
     // console.log("BoardArg:", boardArg.nextToMove());
     console.log("You clicked on", this)
+    boardArg.xsTurn = !boardArg.xsTurn
+    return boardArg
   })
 }
 
@@ -31,7 +33,7 @@ const attachListeners = (boardArg) => {
 class Board {
   constructor() {
     this.board = blankArray
-    this.xsTurn = false
+    this.xsTurn = true
   }
 
   nextToMove() {
@@ -51,9 +53,9 @@ class Board {
     console.log(this.board)
   }
 
-  place(x, y) {
-    this.board[y][x] = nextToMove()
-  }
+  // place(x, y) {
+  //   this.board[y][x] = nextToMove()
+  // }
 
   makeBestMove() {
     // calculate potential opponent winning columns/diagonals

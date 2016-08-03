@@ -7,7 +7,7 @@ $( document ).ready(() => {
   console.log('Hola')
   createNewBoard()
   updateBoard(globalBoard)
-  // attachListeners()
+  attachListeners()
 })
 
 const createNewBoard = () => {
@@ -15,7 +15,7 @@ const createNewBoard = () => {
   //     // console.log('ajax data', data)
   //     // $('#board').html(data)
   //   })
-  b = new Board()
+  let b = new Board()
 }
 
 const updateBoard = (boardArray) => {
@@ -33,7 +33,6 @@ const attachListeners = () => {
   console.log('cell', cell)
 
   $('.yellow').click(function() {
-    // console.log("You clicked on", this)
     console.log($(this).html('X'))
     console.log("You clicked on", this)
   })
@@ -42,11 +41,7 @@ const attachListeners = () => {
 
 class Board {
   constructor() {
-    this.board = [
-      ['.', '.', '.'],
-      ['.', 'X', '.'],
-      ['.', '.', 'O']
-    ]
+    this.board = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
     this.xsTurn = true
   }
 
@@ -68,12 +63,12 @@ class Board {
     console.log(this.board)
   }
 
-  boardString() {
-    let output = this.board[0].join('') + '<br>' +
-    this.board[1].join('') + '<br>' +
-    this.board[2].join('')
-    return output
-  }
+  // boardString() {
+  //   let output = this.board[0].join('') + '<br>' +
+  //   this.board[1].join('') + '<br>' +
+  //   this.board[2].join('')
+  //   return output
+  // }
 
   place(x, y) {
     this.board[y][x] = nextToMove()
@@ -95,7 +90,5 @@ class Board {
 
 }
 
-let b = new Board()
-console.log(b.boardString())
 // b.makeBestMove()
 // b.display()

@@ -19,10 +19,7 @@ const createNewBoard = () => {
 }
 
 const updateBoard = (boardArray) => {
-  console.log('boardArray', boardArray)
   let idsArray = [0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => '#cell-' + k)
-
-  console.log('idsArray', idsArray)
   idsArray.forEach(k => {
     $(k).html(boardArray[k.charAt(k.length - 1)])
   })
@@ -30,8 +27,6 @@ const updateBoard = (boardArray) => {
 
 const attachListeners = () => {
   let cell = $('.yellow')
-  console.log('cell', cell)
-
   $('.yellow').click(function() {
     console.log($(this).html('X'))
     console.log("You clicked on", this)
@@ -50,25 +45,12 @@ class Board {
   }
 
   isEmpty() {
-    // console.log('inside this.isEmpty')
-    // console.log(this.board)
-    // return (this.board === [
-    //   ['.', '.', '.'],
-    //   ['.', '.', '.'],
-    //   ['.', '.', '.']
-    // ])
+
   }
 
   display() {
     console.log(this.board)
   }
-
-  // boardString() {
-  //   let output = this.board[0].join('') + '<br>' +
-  //   this.board[1].join('') + '<br>' +
-  //   this.board[2].join('')
-  //   return output
-  // }
 
   place(x, y) {
     this.board[y][x] = nextToMove()
@@ -89,6 +71,3 @@ class Board {
   }
 
 }
-
-// b.makeBestMove()
-// b.display()

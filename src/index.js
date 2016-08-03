@@ -5,7 +5,7 @@ let path = require('path')
 
 import { Board } from './board'
 
-let globalBoard = ['.', 'Z', '.','.', '.', '.', '.', '.', '.']
+let globalBoard = ['.', '.', '.','.', '.', '.', '.', '.', '.']
 
 app.use(express.static('dist/public'));
 app.set('view engine', 'pug')
@@ -27,7 +27,7 @@ app.get('/api/games/new', function(req, res){
 app.get('/', function (req, res) {
   res.render('index', {
     title: 'Tic Tac Toe (Simple)',
-    message: 'Hello there!',
-    board: ['X', '.', '.', 'O', 'X', 'O', '.', '.', '.']
+    message: 'Tic Tac Toe',
+    board: ['.', '.', '.', '.', '.', '.', '.', '.', '.']
   });
 });

@@ -19,4 +19,9 @@ body {
 #container {
   background-color: red;
   display: table;
+  margin: 10px;
+}
+
+#bigContainer {
+  display: table;
 }

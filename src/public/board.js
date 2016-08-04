@@ -25,7 +25,7 @@ class Board {
   }
 
   place(location) {
-    this.board[location] = nextToMove()
+    this.board[location] = this.nextToMove()
     // return true if game is NOT over
   }
 
@@ -44,9 +44,11 @@ class Board {
 
   }
 
-  checkforWin() {
+  checkForWin() {
     if (this.checkHoriz() || this.checkVertical() || this.checkDiag())
-    {return true}
+    {
+      console.log("Win!");
+      return true}
     else {return false}
   }
 

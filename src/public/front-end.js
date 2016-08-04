@@ -10,7 +10,6 @@ $( document ).ready(() => {
   let b = new Board()
   attachListeners(b)
   // autoPlay(b)
-  console.log('b.board', b.board)
 })
 
 const autoPlay = (b) => {
@@ -18,7 +17,7 @@ const autoPlay = (b) => {
   let moves = b.autoPlay()
   moves.forEach(k => {
     console.log('Placing at ...', k)
-    place(k, 'Y', b)
+    place(k, b)
   })
 }
 
@@ -40,20 +39,18 @@ const attachListeners = (boardArg) => {
   $('.yellow').click(function() {
     $(this).html(boardArg.nextToMove())
     let cell = this.id.replace('cell-', '')
-    console.log('placing at cell:',cell)
     boardArg.board[cell] = boardArg.nextToMove()
-    console.log('board:',boardArg.board)
-    boardArg.checkforWin()
+    boardArg.checkForWin()
     boardArg.xsTurn = !boardArg.xsTurn
     displayTurn(boardArg)
     return boardArg
   })
 }
 
-const place = (loc, xo, boardObj) => {
+const place = (loc, boardObj) => {
   // console.log('Running...')
   let cellId = '#cell-' + loc
   console.log('cellId', cellId)
-  $(cellId).html(xo)
+  $(cellId).html(boardObj.nextToMove())
   boardObj.place(loc)
 }

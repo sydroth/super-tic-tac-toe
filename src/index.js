@@ -3,7 +3,7 @@ var app = express();
 let pug = require('pug')
 let path = require('path')
 
-// import { Board } from './board'
+// import { Board } from './public/board'
 
 let globalBoard = ['.', '.', '.','.', '.', '.', '.', '.', '.']
 
@@ -19,15 +19,13 @@ app.get('/api/games/new', function(req, res){
   console.log('Attempting to create new game...')
   res.render('index', {
     title: 'Tic Tac Toe (Simple)',
-    message: 'Hello there!',
-    board: globalBoard
+    message: 'Hello there!'
   });
 })
 
 app.get('/', function (req, res) {
   res.render('index', {
     title: 'Tic Tac Toe (Simple)',
-    message: 'Tic Tac Toe',
-    board: ['.', '.', '.', '.', '.', '.', '.', '.', '.']
+    message: 'Tic Tac Toe'
   });
 });

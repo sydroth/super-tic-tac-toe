@@ -3,12 +3,14 @@ body {
 }
 
 .yellow {
-  background-color: yellow;
+  background: yellow;
   height: 50px;
   width: 50px;
+  border-color: red;
+  border: 2px;
 }
 
-#container {
+#smallboard {
   background-color: red;
 }
 
@@ -19,4 +21,10 @@ body {
   font-size: 40px;
   display: block;
   position: relative;
+}
+
+#bigboard {
+  background-color: red;
+  height: fit-content;
+  width: fit-content;
 }

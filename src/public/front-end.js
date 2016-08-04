@@ -4,12 +4,14 @@
 
 let globalBoard = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
 
+
+
 $( document ).ready(() => {
-  attachListeners(b)
   let b = new Board()
+  attachListeners(b)
   console.log('b.board', b.board)
   // createNewBoard()
-  autoPlay(b)
+  // autoPlay(b)
 })
 
 const autoPlay = (b) => {

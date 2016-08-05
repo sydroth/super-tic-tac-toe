@@ -44,13 +44,11 @@ const attachListeners = (boardArg) => {
 
 
 const place = (thisCell, boardObj=new Board()) => {
-  console.log('Running with thisCell', thisCell)
   let cellId = thisCell.id[7]
   let boardId = thisCell.id[5]
-  console.log('thisCell.id', thisCell.id, 'cccellId', cellId, 'boardId', boardId, 'boardObj.nextToMove()', boardObj.nextToMove())
+  // console.log('thisCell.id', thisCell.id, 'cccellId', cellId, 'boardId', boardId, 'boardObj.nextToMove()', boardObj.nextToMove())
 
   $('#' + thisCell.id).html(boardObj.nextToMove())
   boardObj.place(cellId)
-  // console.log("boardObj", boardObj)
 
 }

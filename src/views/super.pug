@@ -9,5 +9,12 @@ html(lang="en")
   body
     h4= message
     
-    for boardIndex in [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    hr
+    for boardIndex in [0, 1, 2]
+      include ./includes/board.pug
+    hr
+    for boardIndex in [3, 4, 5]
+      include ./includes/board.pug
+    hr
+    for boardIndex in [6, 7, 8]
       include ./includes/board.pug

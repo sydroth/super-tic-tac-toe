@@ -3,10 +3,6 @@ var app = express();
 let pug = require('pug')
 let path = require('path')
 
-// import { Board } from './public/board'
-
-let globalBoard = ['.', '.', '.','.', '.', '.', '.', '.', '.']
-
 app.use(express.static('dist/public'));
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))

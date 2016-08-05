@@ -47,9 +47,6 @@ const place = (thisCell) => {
   let boardId = thisCell.id[5]
   console.log('cellId', cellId, 'boardId', boardId)
 
-  let id = thisCell.id
-  console.log('cellId', cellId)
-
-  $(cellId).html(boardObj.nextToMove())
-  boardObj.place(loc)    
+  $(cellId).html(this.nextToMove())
+  this.place(cellId)
 }

@@ -6,6 +6,7 @@ class Board {
     this.board = '.........'.split('')
     this.xsTurn = true
     this.gameFinished = false
+    this.winner = false
   }
 
   nextToMove() {
@@ -27,6 +28,9 @@ class Board {
 
   place(location) {
     this.board[location] = this.nextToMove()
+    this.xsTurn = !this.xsTurn
+    this.gameFinished = this.checkForWin()
+
     // return true if game is NOT over
   }
 
@@ -59,7 +63,9 @@ class Board {
     for(var i = 0; i < numRows; i++){
       var rowLeft = i * 3
       if(board[rowLeft] === board[rowLeft + 1] && board[rowLeft] === board[rowLeft + 2] && board [rowLeft] != "."){
-        console.log(board[rowLeft], " WINS!!!")
+        // console.log(board[rowLeft], " WINS!!!")
+        this.winner = board[rowLeft]
+        console.log('Winner:', this.winner)
         return true
       }
     }
@@ -71,7 +77,9 @@ class Board {
     for(var i = 0; i < numColumns; i++){
       var columnTop = i
       if(board[columnTop] === board[columnTop + 3] && board[columnTop] === board[columnTop + 6] && board [columnTop] != "."){
-        console.log(board[columnTop], " WINS!!!")
+        // console.log(board[columnTop], " WINS!!!")
+        this.winner = board[columnTop]
+        console.log('Winner:', this.winner)
         return true
       }
     }
@@ -80,11 +88,15 @@ class Board {
   checkDiag(){
     var board = this.board;
     if(board[0] === board[0 + 4] && board[0] === board[0 + 8] && board[0] != "."){
-      console.log(board[0], " WINS!!!")
+      // console.log(board[0], " WINS!!!")
+      this.winner = board[0]
+      console.log('Winner:', this.winner)
       return true
     }
     if(board[2] === board[2 + 2] && board[2] === board[2 + 4] && board [2] != "."){
-      console.log(board[2], " WINS!!!")
+      // console.log(board[2], " WINS!!!")
+      this.winner = board[2]
+      console.log('Winner:', this.winner)
       return true
     }
   }

@@ -38,8 +38,7 @@ const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
     place(this, boardArg)
-    // $(this).unbind()
-    console.log("this")
+    $(this).off("click")
   })
 }
 
@@ -52,5 +51,6 @@ const place = (thisCell, boardObj=new Board()) => {
 
   $('#' + thisCell.id).html(boardObj.nextToMove())
   boardObj.place(cellId)
+  // console.log("boardObj", boardObj)
 
 }

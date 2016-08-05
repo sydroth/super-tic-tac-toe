@@ -9,16 +9,18 @@ Creating a user interface will provide practice in connecting the front- and bac
 
 ## Specifications
 
-- [ ] Games are played on a web-based game board.
+- [X] Games are played on a web-based game board.
 
 - [ ] Player can select betwixt four different game modes: 
-  - Classic tic-tac-toe: Player vs. player or player vs. AI
-  - Super tic-tac-toe: Player vs. player or player vs. AI
+  - [X] Classic tic-tac-toe: Player vs. player 
+  - [ ] Classic tic-tac-toe: Player vs. AI
+  - [X] Super tic-tac-toe: Player vs. player 
+  - [ ] Super tic-tac-toe: Player vs. AI
 
-- [ ] Player cannot make illegal moves.
+- [X] Player cannot make illegal moves.
 
-- [ ] Player can start a new game.
+- [X] Player can start a new game.
 
-- [ ] Player can view game rules on our website.
+- [X] Player can view game rules on our website.
 
-- [ ] Stack includes: HTML, CSS, Javascript, Jasmine testing
+- [X] Stack includes: HTML, CSS, Javascript, Jasmine testing

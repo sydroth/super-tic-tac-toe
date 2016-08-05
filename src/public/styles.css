@@ -25,3 +25,8 @@ body {
 #bigContainer {
   display: table;
 }
+
+.simple-board {
+  display: inline;
+  margin: 20px;
+}

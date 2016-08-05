@@ -1,31 +1,14 @@
-h5#turn
-h5 Zero Player Mode
-
-#bigContainer
+//- h5#turn
+.simple-board(id = 'board-' + boardIndex)
   .row
-    #container
-      .row
-        #cell-0.yellow.board0
-        #cell-1.yellow.board0
-        #cell-2.yellow.board0                
-      .row
-        #cell-3.yellow.board0
-        #cell-4.yellow.board0
-        #cell-5.yellow.board0
-      .row
-        #cell-6.yellow.board0
-        #cell-7.yellow.board0
-        #cell-8.yellow.board0
-    //- #container
-    //-   .row
-    //-     #cell-0.yellow.board0
-    //-     #cell-1.yellow.board0
-    //-     #cell-2.yellow.board0                
-    //-   .row
-    //-     #cell-3.yellow.board0
-    //-     #cell-4.yellow.board0
-    //-     #cell-5.yellow.board0
-    //-   .row
-    //-     #cell-6.yellow.board0
-    //-     #cell-7.yellow.board0
-    //-     #cell-8.yellow.board0
+    .yellow(id = 'cell-' + boardIndex + '-0')
+    .yellow(id = 'cell-' + boardIndex + '-1')
+    .yellow(id = 'cell-' + boardIndex + '-2')
+  .row
+    .yellow(id = 'cell-' + boardIndex + '-3')
+    .yellow(id = 'cell-' + boardIndex + '-4')
+    .yellow(id = 'cell-' + boardIndex + '-5')
+  .row
+    .yellow(id = 'cell-' + boardIndex + '-6')
+    .yellow(id = 'cell-' + boardIndex + '-7')
+    .yellow(id = 'cell-' + boardIndex + '-8')

@@ -29,3 +29,10 @@ app.get('/', function (req, res) {
     message: 'Tic Tac Toe'
   });
 });
+
+app.get('/super', (req, res) => {
+  res.render('super', {
+    title: 'Super Tic Tac Toe',
+    message: 'Google it'
+  })
+})

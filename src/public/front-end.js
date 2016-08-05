@@ -37,16 +37,20 @@ const displayTurn = (boardArg) => {
 const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
-    place(this)
+    place(this, boardArg)
+    // $(this).unbind()
+    console.log("this")
   })
 }
 
-const place = (thisCell) => {
+
+const place = (thisCell, boardObj=new Board()) => {
   console.log('Running with thisCell', thisCell)
   let cellId = thisCell.id[7]
   let boardId = thisCell.id[5]
-  console.log('cellId', cellId, 'boardId', boardId)
+  console.log('thisCell.id', thisCell.id, 'cccellId', cellId, 'boardId', boardId, 'boardObj.nextToMove()', boardObj.nextToMove())
 
-  $(cellId).html(this.nextToMove())
-  this.place(cellId)
+  $('#' + thisCell.id).html(boardObj.nextToMove())
+  boardObj.place(cellId)
+
 }

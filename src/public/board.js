@@ -13,7 +13,8 @@ class Board {
   }
 
   nextToMove() {
-    return this.xsTurn ? 'X' : 'O'
+    // return this.xsTurn ? 'X' : 'O'
+    return superXsTurn ? 'X' : 'O'
   }
 
   autoPlay() {
@@ -30,7 +31,7 @@ class Board {
 
   place(location) {
     this.board[location] = this.nextToMove()
-    this.xsTurn = !this.xsTurn
+    superXsTurn = !superXsTurn
     this.gameFinished = this.checkForWin()
   }
 

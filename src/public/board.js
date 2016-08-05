@@ -8,35 +8,26 @@ class Board {
     this.id = id
     this.board = '.........'.split('')
     this.xsTurn = true
-    this.gameFinished = false
+    this.isFinished = false
     this.winner = false
-  }
-
-  nextToMove() {
-    // return this.xsTurn ? 'X' : 'O'
-    return superXsTurn ? 'X' : 'O'
   }
 
   autoPlay() {
     // should return an array of 9 moves i.e. locations
     return [8, 7, 6, 5, 4, 3, 2, 0, 1]
   }
-  isEmpty() {
-  }
 
+  isEmpty() {
+
+  }
 
   display() {
     console.log(this.board)
   }
 
-  place(location) {
-    this.board[location] = this.nextToMove()
-    superXsTurn = !superXsTurn
-    this.gameFinished = this.checkForWin()
-  }
-
-  closeBoard(){
-    $('.yellow').off("click")
+  placeSymbol(cellId, symbol) {
+    this.board[cellId] = symbol
+    this.isFinished = this.checkForWin()
   }
 
   makeBestMove() {
@@ -55,12 +46,7 @@ class Board {
   }
 
   checkForWin() {
-    if (this.checkHoriz() || this.checkVertical() || this.checkDiag())
-    {
-      console.log("Win!")
-      this.closeBoard()
-      return true}
-    else {return false}
+    return this.checkHoriz() || this.checkVertical() || this.checkDiag()
   }
 
   checkHoriz(){

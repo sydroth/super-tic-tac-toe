@@ -2,7 +2,8 @@
 
 const range = [...Array(9).keys()]
 var allBoards = range.map(k => new Board())
-var superXsTurn = true
+var XsTurn = true
+var legalBoardId = false;
 
 $(document).ready(function () {
   var allBoards = []
@@ -39,28 +40,41 @@ var displayTurn = function displayTurn(boardArg) {
 
 var attachListeners = function attachListeners() {
   console.log('allBoards', allBoards)
-  var cell = $('.yellow')
-  $('.yellow').click(function () {
-    console.log('this', this)
-    var whichBoard = allBoards[this.id[5]] 
-    console.log('whichBoard', whichBoard)
-    place(this, whichBoard)
-    $(this).off("click")
+  $('.yellow').click(function (event) {
+    event.preventDefault()
+    placeSymbol(this)
+    // console.log('CLICKED:', boardId, cellId)
+    // var whichBoard = allBoards[this.id[5]] 
+    // console.log('YOU CLICKED ON ', this.id)
+    // console.log('whichBoard', whichBoard)
+    // place(this, whichBoard)
+    // $(this).off("click")
   })
 }
 
-var place = function place(thisCell) {
-  var boardObj = arguments.length <= 1 || arguments[1] === undefined ? new Board() : arguments[1]
+var placeSymbol = function place(targetElement){
+  var matches = targetElement.id.match(/^cell-(\d)-(\d)$/)
+  var boardId = matches[1]
+  var cellId = matches[2]
 
-  var cellId = thisCell.id[7]
-  var boardId = thisCell.id[5]
-  console.log('thisCell.id', thisCell.id)
-  console.log('cellId', cellId)
-  console.log('boardId', boardId)
-  console.log('boardObj.nextToMove()', boardObj.nextToMove())
+  // prevents illegal moves
+  if (
+    legalBoardId && 
+    (
+      boardId !== legalBoardId &&
+      !allBoards[legalBoardId].isFinished
+    )
+  ) return;
 
-  $('#' + thisCell.id).html(boardObj.nextToMove())
-  boardObj.place(cellId)
+  var board = allBoards[boardId] 
+  var symbol = XsTurn ? 'X' : 'O'
+  legalBoardId = cellId;
+  board.placeSymbol(cellId, symbol)
+  $(targetElement).text(symbol)
+  if (board.isFinished){
+    $('#board-'+boardId).addClass('finished')
+  }
+  XsTurn = !XsTurn;
 }
 
 var overlay = function overlay() {

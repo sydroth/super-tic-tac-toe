@@ -23,8 +23,12 @@ app.get('/api/games/new', function(req, res){
   });
 })
 
-app.get('/', function (req, res) {
-  res.render('index', {
+app.get('/', (req, res) => {
+  // redirect to simple
+})
+
+app.get('/simple', function (req, res) {
+  res.render('simple', {
     title: 'Tic Tac Toe (Simple)',
     message: 'Tic Tac Toe'
   });

@@ -1,7 +1,8 @@
 // defines game behavior
 
 class Board {
-  constructor() {
+  constructor(id = Math.floor(Math.random() * 100)) {
+    this.id = id
     this.board = '.........'.split('')
     this.xsTurn = true
     this.gameFinished = false

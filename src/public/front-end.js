@@ -37,20 +37,19 @@ const displayTurn = (boardArg) => {
 const attachListeners = (boardArg) => {
   let cell = $('.yellow')
   $('.yellow').click(function() {
-    $(this).html(boardArg.nextToMove())
-    let cell = this.id.replace('cell-', '')
-    boardArg.board[cell] = boardArg.nextToMove()
-    boardArg.checkForWin()
-    boardArg.xsTurn = !boardArg.xsTurn
-    displayTurn(boardArg)
-    return boardArg
+    place(this)
   })
 }
 
-const place = (loc, boardObj) => {
-  // console.log('Running...')
-  let cellId = '#cell-' + loc
+const place = (thisCell) => {
+  console.log('Running with thisCell', thisCell)
+  let cellId = thisCell.id[7]
+  let boardId = thisCell.id[5]
+  console.log('cellId', cellId, 'boardId', boardId)
+
+  let id = thisCell.id
   console.log('cellId', cellId)
+
   $(cellId).html(boardObj.nextToMove())
-  boardObj.place(loc)
+  boardObj.place(loc)    
 }

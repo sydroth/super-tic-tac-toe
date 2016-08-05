@@ -10,4 +10,5 @@ html(lang="en")
     h4= title
     p= message
     
-    include ./includes/board.pug
+    for boardIndex in [0]
+      include ./includes/board.pug

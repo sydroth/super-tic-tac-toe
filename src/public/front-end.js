@@ -1,21 +1,23 @@
 'use strict'
 
-// does HTML things
+const range = [...Array(9).keys()]
+var allBoards = range.map(k => new Board())
 
-let globalBoard = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+$(document).ready(function () {
+  var allBoards = []
+  var b = allBoards[0]
 
-
-
-$( document ).ready(() => {
-  let b = new Board()
-  attachListeners(b)
+  // window.pug.allBoards = allBoards
+  // console.log(Object.keys(window.jade))
+  // console.log(Object.keys(window.pug))
+  attachListeners()
   // autoPlay(b)
 })
 
-const autoPlay = (b) => {
+var autoPlay = function autoPlay(b) {
   console.log('Starting to Auto Play...')
-  let moves = b.autoPlay()
-  moves.forEach(k => {
+  var moves = b.autoPlay()
+  moves.forEach(function (k) {
     console.log('Placing at ...', k)
     place(k, b)
   })
@@ -30,25 +32,32 @@ const autoPlay = (b) => {
 //   })
 // }
 
-const displayTurn = (boardArg) => {
-  $('#turn').html(boardArg.nextToMove()+"'s turn")
+var displayTurn = function displayTurn(boardArg) {
+  $('#turn').html(boardArg.nextToMove() + "'s turn")
 }
 
-const attachListeners = (boardArg) => {
-  let cell = $('.yellow')
-  $('.yellow').click(function() {
-    place(this, boardArg)
+var attachListeners = function attachListeners() {
+  console.log('allBoards', allBoards)
+  var cell = $('.yellow')
+  $('.yellow').click(function () {
+    console.log('this', this)
+    var whichBoard = allBoards[this.id[5]] 
+    console.log('whichBoard', whichBoard)
+    place(this, whichBoard)
     $(this).off("click")
   })
 }
 
+var place = function place(thisCell) {
+  var boardObj = arguments.length <= 1 || arguments[1] === undefined ? new Board() : arguments[1]
 
-const place = (thisCell, boardObj=new Board()) => {
-  let cellId = thisCell.id[7]
-  let boardId = thisCell.id[5]
-  // console.log('thisCell.id', thisCell.id, 'cccellId', cellId, 'boardId', boardId, 'boardObj.nextToMove()', boardObj.nextToMove())
+  var cellId = thisCell.id[7]
+  var boardId = thisCell.id[5]
+  console.log('thisCell.id', thisCell.id)
+  console.log('cellId', cellId)
+  console.log('boardId', boardId)
+  console.log('boardObj.nextToMove()', boardObj.nextToMove())
 
   $('#' + thisCell.id).html(boardObj.nextToMove())
   boardObj.place(cellId)
-
 }

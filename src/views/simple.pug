@@ -7,8 +7,15 @@ html(lang="en")
     script(src='/front-end.js')
     link(rel='stylesheet', type='text/css', href='/styles.css')
   body
+
     h4= title
     p= message
+
+    div
+      a(href='/super') New Super Game
+
+    div
+      a(href='/simple') New Simple Game
     
     for boardIndex in [0]
       include ./includes/board.pug

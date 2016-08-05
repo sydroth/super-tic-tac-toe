@@ -2,6 +2,7 @@
 
 const range = [...Array(9).keys()]
 var allBoards = range.map(k => new Board())
+var superXsTurn = true
 
 $(document).ready(function () {
   var allBoards = []
@@ -60,4 +61,9 @@ var place = function place(thisCell) {
 
   $('#' + thisCell.id).html(boardObj.nextToMove())
   boardObj.place(cellId)
+}
+
+var overlay = function overlay() {
+  el = document.getElementById("overlay");
+  el.style.display = el.style.display === 'block' ? 'none' : 'block'
 }

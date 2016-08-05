@@ -6,9 +6,19 @@ html(lang="en")
     script(src='/board.js')
     script(src='/front-end.js')
     link(rel='stylesheet', type='text/css', href='/styles.css')
+
   body
     h4= message
-    
+
+    div
+      a(href='/super') New Super Game
+
+    div
+      a(href='/simple') New Simple Game
+
+    div
+      a(href='/rules') Read the Rules
+
     hr
     for boardIndex in [0, 1, 2]
       include ./includes/board.pug

@@ -36,3 +36,10 @@ app.get('/super', (req, res) => {
     message: 'Google it'
   })
 })
+
+app.get('/rules', (req, res) => {
+  res.render('rules', {
+    title: 'Game Rules',
+    message: 'Find out how to play'
+  })
+})

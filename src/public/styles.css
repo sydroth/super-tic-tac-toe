@@ -30,3 +30,23 @@ body {
   display: inline;
   margin: 20px;
 }
+
+#overlay {
+  border: #feb041 3px double;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background: rgba(0,0,0,0.9);
+  color: white;
+  z-index: 100;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 776px;
+  height: 602px;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}

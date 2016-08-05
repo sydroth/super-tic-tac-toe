@@ -1,4 +1,7 @@
 // defines game behavior
+// class SuperBoard{
+//   constructor()
+// }
 
 class Board {
   constructor(id = Math.random().toString(36).substr(2, 1)) {
@@ -17,7 +20,6 @@ class Board {
     // should return an array of 9 moves i.e. locations
     return [8, 7, 6, 5, 4, 3, 2, 0, 1]
   }
-
   isEmpty() {
   }
 

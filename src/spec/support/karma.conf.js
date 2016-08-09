@@ -6,7 +6,7 @@ module.exports = function (config) {
 
     files: [
       '../public/jquery-3.1.0.min.js',
-      '../public/game.js',
+      '../public/board.js',
       '*.js'
     ],
 

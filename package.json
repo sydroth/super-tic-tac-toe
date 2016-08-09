@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "test-server": "JASMINE_CONFIG_PATH=dist/spec/support/jasmine.json jasmine",
-    "test-client": "karma start --browsers Chrome dist/spec/support/karma.conf.js",
+    "test-client": "./node_modules/karma/bin/karma start --browsers Chrome dist/spec/support/karma.conf.js",
     "test": "npm run test-client",
     "start": "nodemon dist/index.js",
     "buildwatch": "babel src -d dist -w --copy-files"

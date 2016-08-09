@@ -1,10 +1,7 @@
-describe("Example Spec", function() {
-  it("confirms that 1 === 1", function() {
-    b = new Board()
-    expect(1).toEqual(1)
-  })
-
-  it("fails for 1 === 2", function() {
-    expect(1).toEqual(2)
+describe("Tic-Tac-Toe Board", function() {
+  it("initializes correctly with given id", function() {
+    let b = new Board(10)
+    expect(b.board).toEqual('.........'.split(''))
+    expect(b.id).toEqual(10)
   })
 })

@@ -84,5 +84,4 @@ class Board {
       return true
     }
   }
-
 }

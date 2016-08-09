@@ -9,7 +9,9 @@
   "description": "Cycle 4, Goal 16: Build an interactive game of super tic tac toe.",
   "main": "index.js",
   "scripts": {
-    "test": "JASMINE_CONFIG_PATH=dist/spec/support/jasmine.json jasmine",
+    "test-server": "JASMINE_CONFIG_PATH=dist/spec/support/jasmine.json jasmine",
+    "test-client": "karma start --browsers Chrome dist/spec/support/karma.conf.js",
+    "test": "npm run test-client",
     "start": "nodemon dist/index.js",
     "buildwatch": "babel src -d dist -w --copy-files"
   },
@@ -33,6 +35,8 @@
     "babel-preset-es2015": "^6.9.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "nodemon": "^1.10.0"
   },

@@ -20,7 +20,7 @@ app.get('/api/games/new', function(req, res){
 })
 
 app.get('/', (req, res) => {
-  // redirect to simple
+  res.redirect('/super');
 })
 
 app.get('/simple', function (req, res) {

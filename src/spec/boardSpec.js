@@ -22,13 +22,13 @@ describe("Tic-Tac-Toe Board", function() {
     expect(b.isFull()).toEqual(false)
   })
 
-  fit('#isEmpty returns true when appropriate', () => {
+  it('#isEmpty returns true when appropriate', () => {
     let b = new Board()
     b.board = '.........'
     expect(b.isEmpty()).toEqual(true)
   })
 
-  fit('#isEmpty returns false when appropriate', () => {
+  it('#isEmpty returns false when appropriate', () => {
     let b = new Board()
     b.board = '..X......'
     expect(b.isEmpty()).toEqual(false)

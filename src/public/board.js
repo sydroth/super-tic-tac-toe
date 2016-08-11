@@ -18,7 +18,11 @@ class Board {
   }
 
   isFull() {
-    return this.board.indexOf('.') == -1
+    return this.board.indexOf('.') === -1
+  }
+
+  isEmpty() {
+    return this.board === '.........'
   }
 
   display() {

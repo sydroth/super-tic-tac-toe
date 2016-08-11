@@ -17,8 +17,8 @@ class Board {
     return [8, 7, 6, 5, 4, 3, 2, 0, 1]
   }
 
-  isEmpty() {
-
+  isFull() {
+    return this.board.indexOf('.') == -1
   }
 
   display() {

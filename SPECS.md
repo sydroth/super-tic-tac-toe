@@ -24,3 +24,10 @@ Creating a user interface will provide practice in connecting the front- and bac
 - [X] Player can view game rules on our website.
 
 - [X] Stack includes: HTML, CSS, Javascript, Jasmine testing
+
+## Competencies Developed
+* jQuery + AJAX
+* JavaScript
+* nodeJS + express
+* ES2015 Syntax, babel
+* package.json

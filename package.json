@@ -20,7 +20,7 @@
     "url": "git+https://github.com/sydroth/super-tic-tac-toe.git"
   },
   "keywords": [],
-  "author": "Mihai Banulescu <mihai.banulescu@gmail.com> (http://github.com/bluemihai)",
+  "author": "syd rothman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sydroth/super-tic-tac-toe/issues"
@@ -33,6 +33,7 @@
     "express": "^4.14.0",
     "express-generator": "^4.16.1",
     "express-session": "^1.17.0",
+    "node": "^13.1.0",
     "pug": "^2.0.0-beta4"
   },
   "devDependencies": {
@@ -40,7 +41,7 @@
     "babel-preset-es2015": "^6.9.0",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
-    "karma": "^1.1.2",
+    "karma": "^4.4.1",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "nodemon": "^1.19.4"

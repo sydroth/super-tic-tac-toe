@@ -34,7 +34,7 @@
     "express-generator": "^4.16.1",
     "express-session": "^1.17.0",
     "node": "^13.1.0",
-    "pug": "^2.0.0-beta4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
